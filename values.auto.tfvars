@@ -9,21 +9,12 @@ subnet_name = ["publicSub","privateSub"]
 
 sg_name = "allow-http-ssh"
 sg_description = "Allow http and ssh inbound traffic and all outbound traffic"
-# security_rules1 = [{
-#       internal = 80
-#       external = 80
-#       protocol = "tcp"
-# }]
-# security_rules2 = [{
-#       internal = 22
-#       external = 22
-#       protocol = "tcp"
-# }]
-# security_rules3 = [{
-#       internal = 0
-#       external = 0
-#       protocol = "tcp"
-# }]
+security_rules = {
+      internal = [80,22,0],
+      external = [80,22,0],
+      protocol = "tcp"
+}
+
 security_source = "0.0.0.0/0"
 
 internet_gateway_name = "IGW"

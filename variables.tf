@@ -35,29 +35,14 @@ variable "sg_description" {
 }
 
 
-# variable "security_rules1" {
-#   type = list(object({
-#     internal = number
-#     external = number
-#     protocol = string
-#   }))
-# }
+variable "security_rules" {
+  type = object({
+    internal = list(number),
+    external = list(number),
+    protocol = string
+  })
+}
 
-# variable "security_rules2" {
-#   type = list(object({
-#     internal = number
-#     external = number
-#     protocol = string
-#   }))
-# }
-
-# variable "security_rules3" {
-#  type = list(object({
-#     internal = number
-#     external = number
-#     protocol = string
-#   }))
-# }
 
 variable "security_source" {
   type    = string
